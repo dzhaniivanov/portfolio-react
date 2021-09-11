@@ -3,7 +3,6 @@ import "./Testmonials.scss";
 const Testmonials = () => {
     return (
         <div className="testmonials">
-            
         </div>
     )
 }
