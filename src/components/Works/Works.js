@@ -2,10 +2,9 @@ import "./Works.scss";
 
 const Works = () => {
     return (
-        <div className="works">
+        <div className="works" id="works">
         </div>
     )
 }
 
 export default Works
-    
