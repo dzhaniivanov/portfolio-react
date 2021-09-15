@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PortfolioList from "../PortfolioList/PortfolioList";
 import "./Portfolio.scss";
+import { featuredPortfolio, webPortfolio, mobilePortfolio, designPortfolio, contentPortfolio } from '../../data';
 
 const Portfolio = () => {
 
     const [selected, setSelected] = useState("featured");
+    const [data, setData] = useState([]);
 
     const list = [
         {
@@ -27,7 +29,29 @@ const Portfolio = () => {
             id: "content",
             title: "Content",
         },
-    ]
+    ];
+
+    useEffect(() => {
+        switch (selected) {
+            case "featured":
+                setData(featuredPortfolio);
+                break;
+            case "web":
+                setData(webPortfolio);
+                break;
+            case "mobile":
+                setData(mobilePortfolio);
+                break;
+            case "design":
+                setData(designPortfolio);
+                break;
+            case "content":
+                setData(contentPortfolio);
+                break;
+            default:
+                setData(featuredPortfolio)
+        }
+    }, [selected])
 
 
 
@@ -40,25 +64,16 @@ const Portfolio = () => {
                 ))}
             </ul>
             <div className="container">
-                <div className="item">
-                    <img src="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/d1/30/f9/d130f959-6b4d-5607-891b-bfd038fd0238/2026ab5e-5175-4706-9cd3-8d1a8a88301e_03_ENG_-_mobile_-_1242x2208_-_iOS.png/750x750bb.jpeg" alt="" />
-                    <h3>Banking App</h3>
+                {data.map(d=>(
+                    <div className="item">
+                    <img src={d.img} alt="" />
+                    <h3>{d.title}</h3>
                 </div>
-                <div className="item">
-                    <img src="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/d1/30/f9/d130f959-6b4d-5607-891b-bfd038fd0238/2026ab5e-5175-4706-9cd3-8d1a8a88301e_03_ENG_-_mobile_-_1242x2208_-_iOS.png/750x750bb.jpeg" alt="" />
-                    <h3>Banking App</h3>
-                </div>
-                <div className="item">
-                    <img src="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/d1/30/f9/d130f959-6b4d-5607-891b-bfd038fd0238/2026ab5e-5175-4706-9cd3-8d1a8a88301e_03_ENG_-_mobile_-_1242x2208_-_iOS.png/750x750bb.jpeg" alt="" />
-                    <h3>Banking App</h3>
-                </div>
-                <div className="item">
-                    <img src="https://is3-ssl.mzstatic.com/image/thumb/Purple125/v4/d1/30/f9/d130f959-6b4d-5607-891b-bfd038fd0238/2026ab5e-5175-4706-9cd3-8d1a8a88301e_03_ENG_-_mobile_-_1242x2208_-_iOS.png/750x750bb.jpeg" alt="" />
-                    <h3>Banking App</h3>
-                </div>
+                ))}
+                
             </div>
         </div>
-    )
+    );
 }
 
 export default Portfolio

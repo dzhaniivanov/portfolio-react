@@ -14,8 +14,6 @@
     padding: 0;
     list-style: none;
     display: flex;
-
-  
   }
 
   .container {
@@ -29,16 +27,16 @@
       width: 220px;
       height: 150px;
       border-radius: 20px;
-      border: 1px solid lightgrey;
+      border: 1px solid rgb(240, 239, 239);
       margin: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: white;
       position: relative;
-      transition:all .5s ease 
-      
-    h3 {
+      transition: all 0.5s ease;
+
+      h3 {
         position: absolute;
         font-size: 20px;
       }
