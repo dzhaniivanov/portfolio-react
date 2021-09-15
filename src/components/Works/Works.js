@@ -12,14 +12,19 @@ const Works = () => {
                                     <img src="assets/mobile.png" alt="" />
                                 </div>
                                 <h2>Title</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur corrupti maxime fugiat, reprehenderit perferendis accusantium fuga velit ipsa praesentium quae!</p>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur corrupti maxime fugiat</p>
+                                <span>Projects</span>
                             </div>
-                            <span>Projects</span>
                         </div>
-                        <div className="right"></div>
+                        <div className="right">
+                            <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930" alt="" />
+                        </div>
                     </div>
                 </div>
             </div>
+            <img src="assets/arrow.png" className="arrow left" alt="" />
+            <img src="assets/arrow.png" className="arrow right" alt="" />
+
         </div>
     )
 }
