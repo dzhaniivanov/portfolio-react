@@ -41,20 +41,22 @@ const Testmonials = () => {
         <div className="testimonials" id="testimonials">
             <h1>Testimonials</h1>
             <div className="container">
-                <div className="card">
-                    <div className="top">
-                        <img src="assets/right-arrow.png" className="left" alt="" />
-                        <img src="https://images.pexels.com/photos/428321/pexels-photo-428321.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500 " className="user" alt="" />
-                        <img src="assets/youtube.png" className="right" alt="" />
+                {data.map(d => (
+                    <div className={d.featured ? "card featured" : "card"}>
+                        <div className="top">
+                            <img src="assets/right-arrow.png" className="left" alt="" />
+                            <img src={d.img} className="user" alt="" />
+                            <img src={d.icon} className="right" alt="" />
+                        </div>
+                        <div className="center">
+                            {d.desc}
+                        </div>
+                        <div className="bottom">
+                            <h3>{d.name}</h3>
+                            <h4>{d.title}</h4>
+                        </div>
                     </div>
-                    <div className="center">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, impedit sunt! Quisquam magni quibusdam libero suscipit ipsum doloribus ipsam deserunt!
-                    </div>
-                    <div className="bottom">
-                        <h3>Alex</h3>
-                        <h4>CEO</h4>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     )
