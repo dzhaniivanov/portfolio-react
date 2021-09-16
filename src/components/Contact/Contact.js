@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import "./Contact.scss"
-export default function Contact() {
-    const [message, setMessage] = useState(false);
+import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setMessage(true);
-    }
+
+
+export default function Contact() {
 
 
     return (
@@ -15,15 +15,19 @@ export default function Contact() {
                 <img src="assets/shake.svg" alt="" />
             </div>
             <div className="right">
-                <h2>Contact.</h2>
-                <form onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Email" />
-                    <textarea placeholder="Message"></textarea>
-                    <button type="submit">Send</button>
-                    {message && <span>Thanks, I'll reply ASAP :) </span>}
-                </form>
+                <h2>Contacts</h2>
+                <div className="wrapper">
+                    <a href="https://github.com/dzhaniivanov94" className="contactItem">
+                        <GitHubIcon className="icon" />
+                    </a>
+                    <a className="contactItem" href="https://www.facebook.com/djani.ivanov">
+                        <FacebookIcon className="icon" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/dzhani-ivanov-182412206/" className="contactItem">
+                        <LinkedInIcon className="icon" />
+                    </a>
+                </div>
             </div>
-
         </div>
     )
 }
