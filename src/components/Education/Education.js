@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "./Works.scss";
+import "./Education.scss";
 
 const Works = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -7,30 +7,28 @@ const Works = () => {
     const data = [
         {
             id: "1",
-            icon: "./assets/mobile.png",
-            title: "Web Design",
+            icon: "./assets/shu.jpg",
+            title: "Bachelor Degree",
             desc:
-                "Linkedin simple clone",
-            img:
-                "./assets/linkedin.jpg",
+                "Computer Science",
+            about: "In 2019 i finished my bachelor degree with Computer Science in Shumen University \"Episkop Konstantin Preslavski." 
         },
         {
             id: "2",
-            icon: "./assets/globe.png",
-            title: "Mobile Application",
+            icon: "./assets/shu.jpg",
+            title: "Master Degree",
             desc:
-                "Disney site simple clone",
-            img:
-                "./assets/disney.jpg",
+                "Software Technologies",
+            about: "In 2021 i finished my master degree with Software Technologies in Shumen University \"Episkop Konstantin Preslavski." 
+
         },
         {
             id: "3",
-            icon: "./assets/writing.png",
-            title: "Branding",
+            icon: "./assets/softuni.png",
+            title: "JS Developer path",
             desc:
-                "Facebook like app(Memories).",
-            img:
-                "./assets/memories.jpg",
+                "JavaScript curriculum",
+                about:"From 2020 to May 2021 i took the  courses at the Software University with JavaScript"
         },
     ];
 
@@ -39,10 +37,9 @@ const Works = () => {
     };
 
     return (
-        <div className="works" id="works">
+        <div className="education" id="education">
             <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}vw)` }}>
                 {data.map(d => (
-
                     <div className="container">
                         <div className="item">
                             <div className="left">
@@ -52,18 +49,16 @@ const Works = () => {
                                     </div>
                                     <h2>{d.title}</h2>
                                     <p>{d.desc}</p>
-                                    <span>Projects</span>
                                 </div>
                             </div>
                             <div className="right">
-                                <img src="https://99designs-blog.imgix.net/blog/wp-content/uploads/2018/10/attachment_100040756-e1538485934255.jpeg?auto=format&q=60&fit=max&w=930" alt="" />
+                                <p>{d.about}</p>
                             </div>
                         </div>
                     </div>))}
             </div>
             <img src="assets/arrow.png" className="arrow left" alt="" onClick={() => handleClick("left")} />
             <img src="assets/arrow.png" className="arrow right" alt="" onClick={() => handleClick()} />
-
         </div>
     )
 }
