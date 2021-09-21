@@ -11,7 +11,7 @@ const Works = () => {
             title: "Bachelor Degree",
             desc:
                 "Computer Science",
-            about: "In 2019 i finished my bachelor degree with Computer Science in Shumen University \"Episkop Konstantin Preslavski." 
+            about: "In 2019 i finished my bachelor degree with Computer Science in Shumen University \"Episkop Konstantin Preslavski.\"" 
         },
         {
             id: "2",
@@ -19,7 +19,7 @@ const Works = () => {
             title: "Master Degree",
             desc:
                 "Software Technologies",
-            about: "In 2021 i finished my master degree with Software Technologies in Shumen University \"Episkop Konstantin Preslavski." 
+            about: "In 2021 i finished my master degree with Software Technologies in Shumen University \"Episkop Konstantin Preslavski.\"" 
 
         },
         {
